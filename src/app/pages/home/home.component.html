@@ -1,0 +1,50 @@
+<po-page-default>
+
+    <po-container>
+        <div class="po-font-title po-mb-3">Desempenho de vendas</div>
+        <div class="po-row">
+            <div class="po-lg-6">
+                <po-chart p-title="Taxa de turnover" p-value="25" [p-type]="type" [p-options]="optionsSingle"
+                    [p-series]="turnover"></po-chart>
+            </div>
+            <div class="po-lg-6">
+                <po-chart p-title="Desempenho de vendas" [p-type]="type" [p-options]="optionsRange"
+                    [p-value-gauge-multiple]="50" [p-series]="salesRanges"></po-chart>
+            </div>
+        </div>
+    </po-container>
+
+    <po-container>
+        <po-table [p-auto-collapse]="true" [p-columns]="columns" [p-hide-columns-manager]="false"
+            [p-hide-table-search]="false" [p-items]="items" [p-sort]="true" [p-striped]="true" p-spacing="small">
+            <ng-template p-table-row-template let-rowItem let-i="rowIndex"
+                [p-table-row-template-arrow-direction]="ArrowDirectionRight"
+                [p-table-row-template-show]="isUndelivered">
+                <po-widget p-title="Transport detail { { rowItem.code }}">
+                    <div class="po-row">
+                        <po-select class="po-md-6" name="status" [p-label]="'Transport status'"
+                            [p-options]="statusOptions" [ngModel]="rowItem.status"
+                            (ngModelChange)="rowItem.status = $event">
+                        </po-select>
+                    </div>
+
+                    <div class="po-row">
+                        <po-info class="po-md-4" p-label="Batch of product" [p-orientation]="InfoOrientationHorizontal"
+                            [p-value]="rowItem.batch_product">
+                        </po-info>
+
+                        <po-info class="po-md-4" p-label="Driver" [p-orientation]="InfoOrientationHorizontal"
+                            [p-value]="rowItem.driver"> </po-info>
+
+                        <po-info class="po-md-4" p-label="License plate" [p-orientation]="InfoOrientationHorizontal"
+                            [p-value]="rowItem.license_plate">
+                        </po-info>
+                    </div>
+                </po-widget>
+            </ng-template>
+        </po-table>
+        <br>
+        <br>
+    </po-container>
+
+</po-page-default>
