@@ -13,5 +13,9 @@ export const appRoutes: Routes = [
   {
     path: 'forms',
     loadComponent: () => import('./pages/dynamic-form/dynamic-form.component').then(m => m.DynamicFormComponent)
+  },
+  {
+    path: 'customComponents',
+    loadComponent: () => import('./pages/buttons/buttons.component').then(m => m.ButtonsComponent)
   }
 ];

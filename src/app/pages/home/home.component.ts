@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ForceBooleanComponentEnum, PoButtonModule, PoChartModule, PoChartOptions, PoChartSerie, PoChartType, PoContainerModule, PoDynamicFormComponent, PoDynamicFormField, PoDynamicFormFieldChanged, PoDynamicFormValidation, PoDynamicModule, PoFieldModule, PoInfoModule, PoInfoOrientation, PoMultiselectOption, PoNotificationService, PoPageModule, PoSelectOption, PoTableColumn, PoTableModule, PoTableRowTemplateArrowDirection, PoWidgetModule } from '@po-ui/ng-components';
+import { PoChartModule, PoChartOptions, PoChartSerie, PoChartType, PoContainerModule, PoDynamicFormComponent, PoFieldModule, PoInfoModule, PoInfoOrientation, PoNotificationService, PoPageModule, PoSelectOption, PoTableColumn, PoTableModule, PoTableRowTemplateArrowDirection, PoWidgetModule } from '@po-ui/ng-components';
 import { PoDynamicFormRegisterService } from '../../services/po-dynamic-form-register.service';
 import { SamplePoTableTransportService } from '../../services/sample-po-table-transport.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -61,20 +61,6 @@ export class HomeComponent {
   ngOnInit() {
     this.columns = this.transportService.getColumns();
     this.items = this.transportService.getItems();
-  }
-
-  onChangeFields(changedValue: PoDynamicFormFieldChanged): PoDynamicFormValidation {
-    return {
-      value: { city: undefined },
-      fields: [
-        {
-          property: 'city',
-          gridColumns: 6,
-          options: this.registerService.getCity(changedValue.value.state),
-          disabled: false
-        }
-      ]
-    };
   }
 
   isUndelivered(row: any, index: number) {

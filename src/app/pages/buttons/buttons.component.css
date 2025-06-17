@@ -1,0 +1,20 @@
+/* po-button {
+    --color: rgb(43, 215, 60);
+    --border-radius: 12px;
+    --font-size: 16px;
+    --background-color: black;
+} */
+
+po-dropdown {
+  --color: rgb(43, 215, 60); /* Cor do texto e ícones principais */
+  --border-radius: 12px;     /* Cantos arredondados */
+  --font-size: 16px;         /* Tamanho da fonte */
+  --font-weight: 600;        /* Peso da fonte */
+  --background-hover: rgba(0, 0, 0, 0.05); /* Cor de fundo ao passar o mouse */
+  --color-hover: rgb(43, 215, 60);         /* Cor do texto ao passar o mouse */
+  --outline-color-focused: rgb(43, 215, 60); /* Cor da borda ao focar */
+  --background-pressed: rgba(43, 215, 60, 0.15); /* Cor de fundo ao clicar */
+  --color-disabled: #bdbdbd; /* Cor de texto para estado desabilitado */
+  --padding: 0.5em 1em;      /* Espaçamento interno */
+  --border-width: 2px;       /* Largura da borda */
+}
